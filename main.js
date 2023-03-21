@@ -52,7 +52,7 @@ respuestas (critica);
 const arrayProductos = ["1) Remera Argentina", "2) Remera PSG", "3) Remera Barcelona"];
 
 class Producto {
-    constructor (nombre,precio){
+    constructor (nombre, precio){
         this.nombre = nombre;
         this.precio = precio;
     }
@@ -65,13 +65,13 @@ const remeraBarcelona = new Producto ("Remera Barcelona", 10000)
 const Array22 = [remeraArg, remeraPSG, remeraBarcelona];
 
 let remeras;
-
 do{
-    remeras = prompt ("Que items desea comprar? Ingrese 1, 2 o 3\n 1) Remera Argentina\n 2) Remera PSG\n 3) Remera Barcelona");
+    remeras = parseInt (prompt ("Que items desea comprar? Ingrese 1, 2 o 3\n 1) Remera Argentina\n 2) Remera PSG\n 3) Remera Barcelona"));
 }while (remeras>Array22.length || remeras < 1)   
 
-alert ("Usted seleccionó la opción:" , Array22 [(remeras-1)]);
-alert ("El precio es: $", Array22 [(remeras-1).precio]); 
+//alert (Array22[(remeras-1)].nombre)
+alert (`Usted seleccionó la opción: ${Array22[(remeras-1)].nombre}`);
+alert (`El precio es: $${Array22[(remeras-1)].precio}`) 
 
 let tipoDePago;
 do{
@@ -93,7 +93,8 @@ const ArrayPrecios = Array22.map((producto) => {
     
 })
 
-alert ("El precio en efectivo es: $", ArrayPrecios[remeras-1].precio); 
+alert (`El precio final es: $${ArrayPrecios[remeras-1].precio}`); 
+
 
 
 
